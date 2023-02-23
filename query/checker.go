@@ -5,11 +5,11 @@ import (
 )
 
 func CheckServer(address string) bool {
-	_, err := raknet.Dial(address)
+	_, err := raknet.Ping(address)
 
 	if err != nil {
 		return false
-	} else {
-		return true
-	}
+	} 
+
+	return true
 }

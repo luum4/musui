@@ -6,7 +6,7 @@ import (
 	"musui/query"
 	"os"
 	"log"
-	//"time"
+	"time"
 )
 
 var waitGroup sync.WaitGroup
@@ -15,6 +15,7 @@ func main()  {
 	for true {
 		waitGroup.Add(1)
 		go GenerateIPV4()
+		time.Sleep(500 * time.Millisecond)
 	}
 }
 
@@ -22,8 +23,9 @@ func GenerateIPV4() {
 	defer waitGroup.Done()
 	address := ""
 	for true {
-		n1 := "192"
-		n2 := "168"
+
+		n1 := RandomInt(1, 255)
+		n2 := RandomInt(1, 255)
 		n3 := RandomInt(1, 255)
 		n4 := RandomInt(1, 255)
 
