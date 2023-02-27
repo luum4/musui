@@ -9,7 +9,7 @@ func CheckServer(address string) bool {
 
 	if err != nil {
 		return false
-	} 
+	}
 
 	return true
 }
